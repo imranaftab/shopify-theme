@@ -128,7 +128,6 @@
                               <dd>{{ option.value }}</dd>
                             </div>
                           {%- endfor -%}
-                         <div class='raja2 product-option'></div>
                         {%- endif -%}
 
                         {%- for property in item.properties -%}
@@ -150,7 +149,7 @@
                         {%- endfor -%}
                       </dl>
 
-                    
+                      <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
                     {%- endif -%}
 
                     <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
@@ -354,12 +353,6 @@
     </p>
   </form>
 </cart-items>
-{% raw %}
-<script>
-  console.log("testsize", localStorage.getItem("testsize"))
-  document.querySelector('.raja2').innerText =` Size : ${localStorage.getItem("testsize")}`
-</script>
-{% endraw %}
 
 {% schema %}
 {

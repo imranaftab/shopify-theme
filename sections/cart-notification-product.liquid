@@ -8,7 +8,8 @@
             alt="{{ item.image.alt | escape }}"
             width="70"
             height="{{ 70 | divided_by: item.image.aspect_ratio | ceil }}"
-            loading="lazy">
+            loading="lazy"
+          >
         </div>
       {%- endif -%}
       <div>
@@ -23,9 +24,7 @@
                 <dt>{{ option.name }}:</dt>
                 <dd>{{ option.value }}</dd>
               </div>
-
             {%- endfor -%}
-            <div class='raja product-option'></div>
           {%- endunless -%}
           {%- for property in item.properties -%}
             {%- assign property_first_char = property.first | slice: 0 -%}
@@ -34,10 +33,7 @@
                 <dt>{{ property.first }}:</dt>
                 <dd>
                   {%- if property.last contains '/uploads/' -%}
-                    <a
-                      href="{{ property.last }}"
-                      class="link"
-                      target="_blank">
+                    <a href="{{ property.last }}" class="link" target="_blank">
                       {{ property.last | split: '/' | last }}
                     </a>
                   {%- else -%}
